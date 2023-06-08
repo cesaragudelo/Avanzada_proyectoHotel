@@ -1,6 +1,7 @@
 import express from 'express'
 import { rutas } from './routes/rutas.js'
 import { establecerConexion } from './database/conexion.js'
+import cors from 'cors'
 
 export class API {
 
@@ -14,8 +15,10 @@ export class API {
         )
     }
     enrutarPeticiones(){
+        this.app.use(cors())
        this.app.use(express.json()) 
        this.app.use('/',rutas)
+       
     }
     conectarConBD(){
         establecerConexion()

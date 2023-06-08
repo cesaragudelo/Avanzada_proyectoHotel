@@ -9,7 +9,7 @@ const Habitacion = new Schema({
     },
     foto:{
         type:[String],
-        require:true
+        require:false
     },
     descripcion:{
         type:String,
